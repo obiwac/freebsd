@@ -11,7 +11,7 @@ strverscmp(const char *s1, const char *s2)
 {
 	/*
 	 * If pointers are aliased, no need to go through to process of
-	 * comparing them
+	 * comparing them.
 	 */
 
 	if (s1 == s2)
@@ -21,7 +21,7 @@ strverscmp(const char *s1, const char *s2)
 	const unsigned char *u2 = (const void*) s2;
 
 	while (*u1 && *u2) {
-		/* If either character is not a digit, act like strcmp(3) */
+		/* If either character is not a digit, act like strcmp(3). */
 
 		if (!isdigit(*u1) || !isdigit(*u2)) {
 			if (*u1 != *u2)
