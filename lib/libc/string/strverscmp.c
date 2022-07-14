@@ -53,7 +53,7 @@ strverscmp(const char *s1, const char *s2)
 			if (zeros_count_1 != zeros_count_2)
 				return (zeros_count_2 - zeros_count_1);
 
-			/* Handle the case where 000 < 09. */
+			/* Handle the case where 0 < 09. */
 
 			if (!isdigit(*u1) && isdigit(*u2))
 				return (1);
