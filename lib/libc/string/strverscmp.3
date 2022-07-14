@@ -33,15 +33,15 @@ If the difference is between non-decimal characters,
 .Fn strverscmp
 acts like
 .Xr strcmp 3
-(thus, ordering would be "a", "b", "train").
+(thus, the ordering would be "a", "b", "train").
 If a decimal digit is found, the whole number is read and compared
-(thus, ordering would be "9", "10", "420" which is the opposite of lexicographic order,
+(thus, the ordering would be "9", "10", "420" which is different to lexicographic order,
 what
 .Xr strcmp 3
 would've done).
-Numbers with leading zeroes are interpreted as fractional parts,
+Numbers with leading zeroes are interpreted as fractional parts (even without a decimal point),
 and numbers with more leading zeroes are placed before numbers with fewer leading zeroes
-(thus, ordering would be "000", "00", "01", "010", "09", "0", "1", "9", "10").
+(thus, the ordering would be "000", "00", "01", "010", "09", "0", "1", "9", "10").
 .Sh SEE ALSO
 .Xr strcmp 3 ,
 .Xr versionsort 3
