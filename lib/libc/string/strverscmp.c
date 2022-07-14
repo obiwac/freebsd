@@ -35,10 +35,10 @@ strverscmp(const char *s1, const char *s2)
 
 		if (*u1 == '0' || *u2 == '0') {
 			/*
-			 * Leading zeros; we're dealing with the fractional part
-			 * of a number. This is the case even without a decimal
-			 * point. First, count leading zeros (more zeros ==
-			 * smaller number).
+			 * Treat leading zeros as if they were the fractional
+			 * part of a number, i.e. as if they had a decimal point
+			 * in front. First, count the leading zeros (more zeros
+			 * == smaller number).
 			 */
 
 			size_t zeros_count_1 = 0;
