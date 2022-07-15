@@ -38,7 +38,7 @@ If a decimal digit is found, the whole number is read and compared
 (thus, the ordering would be "9", "10", "420" which is different to lexicographic order,
 what
 .Xr strcmp 3
-would've done).
+would have done).
 Numbers with leading zeroes are interpreted as fractional parts (even without a decimal point),
 and numbers with more leading zeroes are placed before numbers with fewer leading zeroes
 (thus, the ordering would be "000", "00", "01", "010", "09", "0", "1", "9", "10").
