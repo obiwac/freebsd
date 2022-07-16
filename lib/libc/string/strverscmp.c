@@ -20,7 +20,7 @@ strverscmp(const char *s1, const char *s2)
 	const unsigned char *u1 = (const void*) s1;
 	const unsigned char *u2 = (const void*) s2;
 
-	while (*u1 && *u2) {
+	while (*u1 != '\0' && *u2 != '\0') {
 		/* If either character is not a digit, act like strcmp(3). */
 
 		if (!isdigit(*u1) || !isdigit(*u2)) {
@@ -74,14 +74,11 @@ strverscmp(const char *s1, const char *s2)
 
 			/* Count digits (more digits == larger number). */
 
-			size_t digit_count_1 = 0;
-			size_t digit_count_2 = 0;
+			for (; isdigit(*u1); u1++);
+			for (; isdigit(*u2); u2++);
 
-			for (; isdigit(*u1); u1++)
-				digit_count_1++;
-
-			for (; isdigit(*u2); u2++)
-				digit_count_2++;
+			size_t digit_count_1 = u1 - num_1;
+			size_t digit_count_2 = u2 - num_2;
 
 			if (digit_count_1 != digit_count_2)
 				return (digit_count_1 - digit_count_2);
